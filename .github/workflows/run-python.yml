@@ -1,17 +1,38 @@
 name: Run Python Script
 on: [push]
+
 jobs:
-  steps:
-    runs-python-script:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Inicio
-          run: echo "Comienza Actions"
-        - name: Clonar Repositorio
-          uses: actions/checkout@v2
-        - name: Muestra archivos
-          run: ls -al
-        - name: Definir variables
-          run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
-        - name: Ejecutar Script
-          run: python app.py
+  runs-python-script:
+    runs-on: ubuntu-latest
+    steps:          
+      - name: Inicio
+        run: echo "Comienza Actions"
+        
+      - name: Clonar Repositorio
+        uses: actions/checkout@v2
+        
+      - name: Muestra archivos
+        run: ls -al
+        
+      - name: Definir variables
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+        
+      - name: Ejecutar Script
+        run: python app.py
+  runs-javaScript-script:
+    runs-on: ubuntu-latest
+    steps:          
+      - name: Inicio
+        run: echo "Comienza Actions"
+        
+      - name: Clonar Repositorio
+        uses: actions/checkout@v2
+        
+      - name: Muestra archivos
+        run: ls -al
+        
+      - name: Definir variables
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+        
+      - name: Ejecutar Script
+        run: python app.py
